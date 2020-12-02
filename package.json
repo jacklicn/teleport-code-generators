@@ -8,8 +8,8 @@
   "scripts": {
     "lint": "tslint -p . -c tslint.json",
     "clean": "lerna run clean --parallel",
-    "build": "lerna link && lerna run build --stream",
-    "build:v2": "lerna link && lerna run build:esbuild --parallel",
+    "build": "lerna link && lerna exec -- yarn run clean",
+    "build:v2": "lerna link && lerna run build:esbuild --parallel --stream",
     "build:cjs": "lerna run build:cjs",
     "build:esm": "lerna run build:esm",
     "dev": "lerna link && npm run build:cjs && npm run watch",
